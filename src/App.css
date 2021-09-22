@@ -17,7 +17,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -35,4 +35,223 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.bg-color-navbar {
+  background-color: #faf1ff;
+}
+
+.font-color-navbar {
+  color: #9a307c !important;
+}
+.font-signin {
+  color: #333333 !important;
+}
+
+.font-color-h1-home {
+  color: #9a307c !important;
+  font-weight: bold;
+  padding-top: 5rem;
+  font-size: 72px;
+  line-height: 109px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.title-home {
+  position: relative;
+  height: 700px;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-p-home {
+  font-size: 36px;
+  color: #9a307c;
+}
+
+.filter-home {
+  margin-top: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55rem;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 4px 24px rgba(182, 126, 166, 0.24);
+  border-radius: 100px !important;
+}
+
+.head-fiwfans20 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  width: 80rem;
+  background: #fbf5ff;
+  margin-top: 3rem;
+  background-color: #fbf5ff !important;
+  border-radius: 10px solid #f8f9fa !important;
+}
+
+.font-fiwfans20 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #9a307c;
+}
+
+.font-sub-fiwfans20 {
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  color: #9a307c;
+}
+
+.bg-affiliation {
+  height: 523px;
+  background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
+}
+
+.text-see-more {
+  display: inline;
+  width: 98px;
+  height: 36px;
+  left: 1177px;
+  top: 832px;
+  font-family: Prompt;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
+}
+
+.card-affiliation {
+  padding-top: 1rem;
+  position: relative;
+  width: 165px;
+  height: 167px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.image-pink {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.wow {
+  height: 1000px;
+}
+
+.list-all-main {
+  background: linear-gradient(180deg, #d554a9 -77.14%, #fab4ce 100%);
+  border-radius: 10px;
+}
+
+.image-list-main {
+  width: 260px;
+  height: 350px;
+}
+
+.card-list-item {
+  background: #ffffff;
+  box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.08);
+  border-radius: 10px;
+}
+
+.card-subtitle-item {
+  font-size: 14px;
+  line-height: 21px;
+  color: #c1c1c1;
+}
+
+.card-price-item {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #d554a9;
+}
+
+.testt {
+  position: relative;
+}
+
+.test2 {
+  position: absolute;
+  background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  color: #ffffff;
+  top: 3%;
+  left: 3%;
+  align-items: center;
+  justify-items: center;
+}
+
+.test3 {
+  position: absolute;
+  bottom: -3%;
+  right: 3%;
+  background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+.card-province-item {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+  background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
+  border-radius: 4px;
+}
+
+.favorites {
+  top: 3%;
+  right: 3%;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100px;
+  background: #b3b6b5;
+}
+
+.heart {
+  margin-left: 13px;
+  margin-top: 16px;
+}
+
+footer {
+  margin-top: 5rem;
+  height: 50px;
+  left: 0px;
+  top: 4103px;
+  background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
 }
