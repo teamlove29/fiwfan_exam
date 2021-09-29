@@ -15,6 +15,7 @@ import { Image } from 'react-bootstrap';
 export default function Detail() {
 
     let { id }: any = useParams();
+
     const [item] = useState<number[]>([1, 2, 3, 4])
     SwiperCore.use([Navigation, Thumbs]);
     const history = useHistory();
@@ -45,7 +46,7 @@ export default function Detail() {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, []);
+    }, [id]);
 
     return (
         <>

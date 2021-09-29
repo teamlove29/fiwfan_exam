@@ -28,10 +28,10 @@ const HomeWork = () => {
                 </div>
                 {state.map((value) => {
                     return (
-                        <Card className="mt-3 px-3" style={{ height: '550px' }}>
+                        <Card className="mt-3 px-3" style={{ height: '100%' }}>
                             <Card.Body >
                                 <Row>
-                                    <Col xs={4}>
+                                    <Col xs={12} md={4} lg={3} xl={3}>
                                         <div className="author" style={{ marginLeft: "0rem" }}>
                                             <img className="author__avatar" src={Avatar} alt="Avatar" />
                                             <div>
@@ -41,29 +41,36 @@ const HomeWork = () => {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xs={2} className="mt-3">
+                                    <Col xs={12} md={2} xl={1} className="d-none d-sm-none d-md-block">
+                                        <div style={{
+                                            marginTop: "2.5rem",
+                                            border: '1px solid #D554A9',
+                                            transform: 'rotate(90deg)',
+                                        }}></div>
+                                    </Col>
+                                    <Col xs={12} md={2} xl={2} className="mt-3 ">
                                         <p>ตรงปก</p>
                                         <p className="color-font-main">9/10</p>
                                     </Col>
-                                    <Col xs={2} className="mt-3">
+                                    <Col xs={12} md={2} xl={2} className="mt-3">
                                         <p>เรื่องบนเตียง</p>
                                         <p className="color-font-main">9/10</p>
                                     </Col>
-                                    <Col xs={2} className="mt-3">
+                                    <Col xs={12} md={2} xl={2} className="mt-3">
                                         <p>ความคุ้มค่า</p>
                                         <p className="color-font-main">9/10</p>
                                     </Col>
-                                    <Col xs={2}>
-                                        <img width="50" src={NongPR} alt="" />
-                                        <p className="color-font-main">เข้าชมน้อง</p>
+                                    <Col xs={12} md={2} xl={2} className="mt-2">
+                                        <img width="50" className="mx-2" src={NongPR} alt="" />
+                                        <p className="color-font-main text-start">เข้าชมน้อง</p>
                                     </Col>
                                 </Row>
                                 <p className="mt-2">ส่งการบ้านน้อง แคนดี้ รังสิต นัดน้องเวลา12:00 น. วันนี้ได้มาจัดน้องเเคนดี้ น้องน่ารักมากเวลายิ้มมีสเนห์ ขาวเนียน อวบอึ๋มเซ็กจัดเยสโหดมากครับ ท่าหกเก้ากับน้องอยู่ประมาณ5นาที จากนั้นจัดขอบเตียงให้น้องหน่อย หอยฟิต ผมซอยน้องน้องบอกเสียวมากไม่ไหวแล้วพี่ เสียงน่ารักมาก ทำผมทนไม่ไหวและเสร็จในทันที ชอบมากครับ เต็มที่ทุกลีลา ไปสอนการบ้านน้องกันครับ รับประกันคนนี้เด็ดมาก</p>
                                 <div className="mt-3 d-flex">
-                                    <img className="me-3" width="200" src={NongPR} alt="" />
-                                    <img className="me-3" width="200" src={NongPR} alt="" />
-                                    <img className="me-3" width="200" src={NongPR} alt="" />
-                                    <img className="me-3" width="200" src={NongPR} alt="" />
+                                    <img src={NongPR} alt="" className="image-homework" />
+                                    <img src={NongPR} alt="" className="image-homework" />
+                                    <img src={NongPR} alt="" className="image-homework" />
+                                    <img src={NongPR} alt="" className="image-homework d-sm-none d-lg-block" />
                                 </div>
                             </Card.Body>
                         </Card>

@@ -137,8 +137,9 @@
 }
 
 .bg-affiliation {
-  height: 523px;
+  height: 100%;
   background: linear-gradient(180deg, #d554a9 0%, #fab4ce 100%);
+  padding-bottom: 3rem;
 }
 
 .text-see-more {
@@ -185,10 +186,10 @@
 
 .image-list-main {
   width: 100%;
-  height: 350px;
 }
 
 .card-list-item {
+  cursor: pointer;
   background: #ffffff;
   box-shadow: 0px 4px 8px rgba(51, 51, 51, 0.08);
   border-radius: 10px;
@@ -447,23 +448,40 @@ footer {
   padding: 25px;
 }
 
+.image-homework {
+  height: 250px;
+  width: 180px;
+  float: left;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 /* น้อยกว่า 768 */
 @media screen and (max-width: 768px) {
   .title-home {
-    height: 510px;
+    height: 100%;
   }
 
   .font-color-h1-home {
-    font-size: 37px;
+    font-size: 40px;
     padding-top: 0.5rem;
+    line-height: 3rem;
   }
   .font-p-home {
-    font-size: 18px;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .card-price-item {
+    font-size: 16px;
   }
 
   .filter-home {
-    width: 30rem;
-    margin: 1.5rem auto;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 0px !important;
   }
   .btn-filter {
@@ -471,6 +489,13 @@ footer {
   }
   .detail-person {
     margin-top: -3rem;
+  }
+
+  .image-homework {
+    height: 125px;
+    width: 100px;
+    margin-right: 10px;
+    margin-top: 10px;
   }
 }
 

@@ -104,10 +104,8 @@ export default function Home() {
                             <Nav>
                                 <Nav.Link href="#memes" className="text-light">ดูเพิ่มเติม</Nav.Link>
                             </Nav>
-
                         </Container>
                     </Navbar>
-
                 </Container>
 
                 <Carousel touch={true} indicators={false}>
@@ -302,11 +300,11 @@ export default function Home() {
                         </Navbar>
                     </div>
 
-                    <Row>
+                    <Row className="align-items-center align-self-center justify-content-center">
                         {item && item.map((vavlue, index) => {
                             return (
                                 <Col xs={6} sm={6} md={4} lg={3} className="mt-3 px-2" key={index}>
-                                    <Card className="card-list-item " onClick={() => hendleOnClick(index)}>
+                                    <Card className="card-list-item" onClick={() => hendleOnClick(index)}>
                                         <div className="testt">
                                             <Card.Img className="image-list-main" variant="top" src="https://s3-alpha-sig.figma.com/img/b8e2/30ee/88f3623e2f2878854ebb6b0113081f6b?Expires=1633305600&Signature=PNXQFursiIe43iAbq0UlALuJTRqEVLkl7~rUSMPIxCfzgE5tWZ7tzp8nUXPY0Pz9TwW7w9wcwqmpT-nkXE6DxT8X50BYJILzWCY4poLud9GOODMK8Urm8BsVOOb8qcQ-rD3Yznb7IATvGX4EaFeUSo1bSr-1Qt4EpiUDbEdxZtwfrBOWFxBKkGUsnPuljDuktupFJJReujbN55SYNnRqUor3Egffixb2FzbdR7m44LC~cghoe2RWS9AMLIkOpRZRtGyebwyFWZH7ryBBsp6cnN7dwBXNnDUEraGywrtdeLWrqKrb0e0nvAFJkglkEf66GgPi6NSFmSPejTEkU81F3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
                                             <p className="test2 d-flex">
@@ -346,10 +344,10 @@ export default function Home() {
                     </Row>
                 </Container>
 
-                <footer></footer>
+
             </div>
 
-
+            <footer></footer>
         </>
     )
 }
