@@ -203,7 +203,8 @@ export default function Detail() {
                                 <h4 className="mt-1 text-light">การบ้านของ ผิงผิง CM</h4>
                             </Nav>
                             <Nav>
-                                <Button>ส่งการบ้าน</Button>
+                                <Button className="send-homework">
+                                    ส่งการบ้าน</Button>
                             </Nav>
                         </Container>
                     </Navbar>
@@ -325,7 +326,7 @@ export default function Detail() {
                                         <Col xs={6} sm={6} md={4} lg={3} className="mt-3 px-2" key={index}>
                                             <Card className="card-list-item " onClick={() => hendleOnClick(index)}>
                                                 <div className="testt">
-                                                    <Card.Img className="image-list-main" variant="top" src="https://s3-alpha-sig.figma.com/img/b8e2/30ee/88f3623e2f2878854ebb6b0113081f6b?Expires=1633305600&Signature=PNXQFursiIe43iAbq0UlALuJTRqEVLkl7~rUSMPIxCfzgE5tWZ7tzp8nUXPY0Pz9TwW7w9wcwqmpT-nkXE6DxT8X50BYJILzWCY4poLud9GOODMK8Urm8BsVOOb8qcQ-rD3Yznb7IATvGX4EaFeUSo1bSr-1Qt4EpiUDbEdxZtwfrBOWFxBKkGUsnPuljDuktupFJJReujbN55SYNnRqUor3Egffixb2FzbdR7m44LC~cghoe2RWS9AMLIkOpRZRtGyebwyFWZH7ryBBsp6cnN7dwBXNnDUEraGywrtdeLWrqKrb0e0nvAFJkglkEf66GgPi6NSFmSPejTEkU81F3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+                                                    <Card.Img className="image-list-main" variant="top" src={NongPR} />
                                                     <p className="test2 d-flex">
                                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M13.6313 5.11934C13.5894 4.99592 13.5123 4.88747 13.4095 4.80738C13.3066 4.72729 13.1826 4.67908 13.0527 4.66868L9.252 4.36668L7.60733 0.72601C7.55495 0.608751 7.46976 0.509157 7.36203 0.439248C7.2543 0.369339 7.12864 0.332102 7.00021 0.332031C6.87179 0.331961 6.74609 0.36906 6.63828 0.438851C6.53047 0.508642 6.44517 0.608142 6.39266 0.725343L4.748 4.36668L0.947331 4.66868C0.819634 4.67879 0.697556 4.72548 0.5957 4.80316C0.493845 4.88084 0.416526 4.98622 0.372993 5.1067C0.329459 5.22717 0.321556 5.35763 0.350227 5.48248C0.378899 5.60733 0.442931 5.72127 0.534664 5.81068L3.34333 8.54868L2.35 12.85C2.31984 12.9802 2.3295 13.1165 2.37774 13.2411C2.42598 13.3657 2.51057 13.473 2.62053 13.549C2.73049 13.6249 2.86074 13.6661 2.99439 13.6671C3.12803 13.6681 3.25889 13.629 3.37 13.5547L7 11.1347L10.63 13.5547C10.7436 13.6301 10.8775 13.6689 11.0138 13.6659C11.15 13.6629 11.2821 13.6183 11.3923 13.538C11.5024 13.4577 11.5853 13.3456 11.6298 13.2167C11.6744 13.0879 11.6784 12.9485 11.6413 12.8173L10.422 8.55068L13.446 5.82934C13.644 5.65068 13.7167 5.37201 13.6313 5.11934Z" fill="white" />
@@ -366,12 +367,12 @@ export default function Detail() {
                     <Carousel.Item>
                         <Container>
                             <Row className="align-items-center align-self-center justify-content-center">
-                                {item && item.map((vavlue, index) => {
+                                {item && item.map((value, index) => {
                                     return (
                                         <Col xs={6} sm="auto" lg={3} className="mt-3 px-2" key={index}>
                                             <Card className="card-list-item " onClick={() => hendleOnClick(index)}>
                                                 <div className="testt">
-                                                    <Card.Img className="image-list-main" variant="top" src="https://s3-alpha-sig.figma.com/img/b8e2/30ee/88f3623e2f2878854ebb6b0113081f6b?Expires=1633305600&Signature=PNXQFursiIe43iAbq0UlALuJTRqEVLkl7~rUSMPIxCfzgE5tWZ7tzp8nUXPY0Pz9TwW7w9wcwqmpT-nkXE6DxT8X50BYJILzWCY4poLud9GOODMK8Urm8BsVOOb8qcQ-rD3Yznb7IATvGX4EaFeUSo1bSr-1Qt4EpiUDbEdxZtwfrBOWFxBKkGUsnPuljDuktupFJJReujbN55SYNnRqUor3Egffixb2FzbdR7m44LC~cghoe2RWS9AMLIkOpRZRtGyebwyFWZH7ryBBsp6cnN7dwBXNnDUEraGywrtdeLWrqKrb0e0nvAFJkglkEf66GgPi6NSFmSPejTEkU81F3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+                                                    <Card.Img className="image-list-main" variant="top" src={NongPR} />
                                                     <p className="test2 d-flex">
                                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M13.6313 5.11934C13.5894 4.99592 13.5123 4.88747 13.4095 4.80738C13.3066 4.72729 13.1826 4.67908 13.0527 4.66868L9.252 4.36668L7.60733 0.72601C7.55495 0.608751 7.46976 0.509157 7.36203 0.439248C7.2543 0.369339 7.12864 0.332102 7.00021 0.332031C6.87179 0.331961 6.74609 0.36906 6.63828 0.438851C6.53047 0.508642 6.44517 0.608142 6.39266 0.725343L4.748 4.36668L0.947331 4.66868C0.819634 4.67879 0.697556 4.72548 0.5957 4.80316C0.493845 4.88084 0.416526 4.98622 0.372993 5.1067C0.329459 5.22717 0.321556 5.35763 0.350227 5.48248C0.378899 5.60733 0.442931 5.72127 0.534664 5.81068L3.34333 8.54868L2.35 12.85C2.31984 12.9802 2.3295 13.1165 2.37774 13.2411C2.42598 13.3657 2.51057 13.473 2.62053 13.549C2.73049 13.6249 2.86074 13.6661 2.99439 13.6671C3.12803 13.6681 3.25889 13.629 3.37 13.5547L7 11.1347L10.63 13.5547C10.7436 13.6301 10.8775 13.6689 11.0138 13.6659C11.15 13.6629 11.2821 13.6183 11.3923 13.538C11.5024 13.4577 11.5853 13.3456 11.6298 13.2167C11.6744 13.0879 11.6784 12.9485 11.6413 12.8173L10.422 8.55068L13.446 5.82934C13.644 5.65068 13.7167 5.37201 13.6313 5.11934Z" fill="white" />

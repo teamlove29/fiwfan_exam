@@ -1,21 +1,38 @@
 
-import { useState } from 'react';
-import { Button, Navbar, Container, Nav, Card, Row, Col, Image, Carousel, Dropdown, FormControl, ButtonGroup } from 'react-bootstrap';
+import { useCallback, useEffect, useState } from 'react';
+import { Button, Navbar, Container, Nav, Card, Row, Col, Image, Carousel, Dropdown, FormControl, ButtonGroup, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import '../../App.css';
 import PinkIcon from '../../assets/pink.png';
-
-
+import NongPR from '../../assets/nongPR.png';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { fetchPersons, selectDataPersons } from '../../store/persons/fetchPerson';
+import { PersonData } from '../../store/types';
 
 export default function Home() {
 
-    const [item] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24])
+    const [item, setItem] = useState<PersonData[]>()
     const [itemPink] = useState<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
     const history = useHistory();
+    const dataOfPersons = useAppSelector(selectDataPersons)
+    const dispatch = useAppDispatch();
 
     const hendleOnClick = (index: number) => {
         history.push(`/detail/${index}`)
     }
+
+    const getDataPerson = useCallback(() => {
+        dispatch(fetchPersons())
+    }, [dispatch])
+
+    useEffect(() => {
+        if (dataOfPersons.data === null) {
+            getDataPerson()
+        } else {
+            setItem(dataOfPersons.data)
+        }
+        return () => { }
+    }, [getDataPerson, dataOfPersons.data])
 
     return (
         <>
@@ -294,19 +311,43 @@ export default function Home() {
                                     <h4 className="mt-2 text-light">รายการทั้งหมด 535 รายการ</h4>
                                 </Nav>
                                 <Nav>
-                                    {/* <Nav.Link href="#memes" className="text-light">ดูเพิ่มเติม</Nav.Link> */}
+                                    <Card style={{
+                                        background: 'rgba(255, 255, 255, 0.7)',
+                                        borderRadius: '10px',
+                                    }}>
+
+                                        <Form className="d-flex">
+                                            <Form.Control
+                                                style={{
+                                                    color: '#9A307C',
+                                                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                                                    borderRadius: '10px',
+                                                    border: '0px',
+
+                                                }}
+                                                type="text" placeholder="ให้เราช่วยค้นหา........." />
+                                            <Button variant="link">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11.6258 0.493774C7.38281 0.493774 3.94553 3.93273 3.94553 8.17377C3.94333 9.57094 4.32417 10.942 5.04665 12.1379L1.32305 15.8615L1.33601 15.8744C0.938568 16.2548 0.694489 16.7948 0.694489 17.4051C0.694249 18.5843 1.63361 19.5063 2.81153 19.5061C3.41321 19.5059 3.95129 19.2651 4.33529 18.8735L4.34465 18.8828L8.18657 15.0407C9.25376 15.5765 10.4316 15.855 11.6258 15.8538C15.869 15.8538 19.3055 12.4153 19.3055 8.17377C19.3055 3.93273 15.8687 0.493774 11.6258 0.493774ZM11.6723 12.8339C9.02033 12.8339 6.87209 10.6849 6.87209 8.03385C6.87209 5.38329 9.02033 3.23385 11.6723 3.23385C14.3243 3.23385 16.4721 5.38305 16.4721 8.03385C16.4723 10.6849 14.3243 12.8339 11.6723 12.8339Z" fill="#9A307C" />
+                                                </svg>
+                                            </Button>
+                                        </Form>
+
+                                    </Card>
+
                                 </Nav>
                             </Container>
                         </Navbar>
                     </div>
 
                     <Row className="align-items-center align-self-center justify-content-center">
-                        {item && item.map((vavlue, index) => {
+                        {item && item.map((value, index) => {
                             return (
                                 <Col xs={6} sm={6} md={4} lg={3} className="mt-3 px-2" key={index}>
                                     <Card className="card-list-item" onClick={() => hendleOnClick(index)}>
                                         <div className="testt">
-                                            <Card.Img className="image-list-main" variant="top" src="https://s3-alpha-sig.figma.com/img/b8e2/30ee/88f3623e2f2878854ebb6b0113081f6b?Expires=1633305600&Signature=PNXQFursiIe43iAbq0UlALuJTRqEVLkl7~rUSMPIxCfzgE5tWZ7tzp8nUXPY0Pz9TwW7w9wcwqmpT-nkXE6DxT8X50BYJILzWCY4poLud9GOODMK8Urm8BsVOOb8qcQ-rD3Yznb7IATvGX4EaFeUSo1bSr-1Qt4EpiUDbEdxZtwfrBOWFxBKkGUsnPuljDuktupFJJReujbN55SYNnRqUor3Egffixb2FzbdR7m44LC~cghoe2RWS9AMLIkOpRZRtGyebwyFWZH7ryBBsp6cnN7dwBXNnDUEraGywrtdeLWrqKrb0e0nvAFJkglkEf66GgPi6NSFmSPejTEkU81F3w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" />
+                                            {/* <Image src={value.img[0]} /> */}
+                                            <Card.Img className="image-list-main" variant="top" src={value.img[0]} />
                                             <p className="test2 d-flex">
                                                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M13.6313 5.11934C13.5894 4.99592 13.5123 4.88747 13.4095 4.80738C13.3066 4.72729 13.1826 4.67908 13.0527 4.66868L9.252 4.36668L7.60733 0.72601C7.55495 0.608751 7.46976 0.509157 7.36203 0.439248C7.2543 0.369339 7.12864 0.332102 7.00021 0.332031C6.87179 0.331961 6.74609 0.36906 6.63828 0.438851C6.53047 0.508642 6.44517 0.608142 6.39266 0.725343L4.748 4.36668L0.947331 4.66868C0.819634 4.67879 0.697556 4.72548 0.5957 4.80316C0.493845 4.88084 0.416526 4.98622 0.372993 5.1067C0.329459 5.22717 0.321556 5.35763 0.350227 5.48248C0.378899 5.60733 0.442931 5.72127 0.534664 5.81068L3.34333 8.54868L2.35 12.85C2.31984 12.9802 2.3295 13.1165 2.37774 13.2411C2.42598 13.3657 2.51057 13.473 2.62053 13.549C2.73049 13.6249 2.86074 13.6661 2.99439 13.6671C3.12803 13.6681 3.25889 13.629 3.37 13.5547L7 11.1347L10.63 13.5547C10.7436 13.6301 10.8775 13.6689 11.0138 13.6659C11.15 13.6629 11.2821 13.6183 11.3923 13.538C11.5024 13.4577 11.5853 13.3456 11.6298 13.2167C11.6744 13.0879 11.6784 12.9485 11.6413 12.8173L10.422 8.55068L13.446 5.82934C13.644 5.65068 13.7167 5.37201 13.6313 5.11934Z" fill="white" />
@@ -321,8 +362,8 @@ export default function Home() {
 
                                         <Card.Body>
                                             <Row>
-                                                <Col> <div className="card-province-item text-center">เชียงใหม่</div> </Col>
-                                                <Col> <div className="text-end">หนองป่าครั่ง</div></Col>
+                                                <Col sm={12} md={6}> <div className="card-province-item text-center">เชียงใหม่</div> </Col>
+                                                <Col sm={12} md={6}> <div className="text-end font-14">{value.place}</div></Col>
                                             </Row>
                                             <div style={{
                                                 fontWeight: 600,
@@ -330,11 +371,11 @@ export default function Home() {
                                                 lineHeight: '21px',
                                                 color: '#D554A9',
                                                 marginTop: '10px'
-                                            }}>ผิงผิงCM</div>
+                                            }}>{value.name}</div>
                                             <div className="card-subtitle-item mt-2">หญิง</div>
                                             <Row>
-                                                <Col xs={5} sm={5} md={4} lg={5} xl={6}> <div className="card-subtitle-item mt-2">อายุ 24</div> </Col>
-                                                <Col xs={7} sm={7} md={8} lg={7} xl={6}> <div className="card-price-item text-end">฿ 1,200</div></Col>
+                                                <Col xs={5} sm={5} md={4} lg={5} xl={6}> <div className="card-subtitle-item mt-2">อายุ {value.age}</div> </Col>
+                                                <Col xs={7} sm={7} md={8} lg={7} xl={6}> <div className="card-price-item text-end">฿ {value.price}</div></Col>
                                             </Row>
                                         </Card.Body>
                                     </Card>

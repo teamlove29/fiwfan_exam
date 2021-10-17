@@ -23,7 +23,11 @@ export default function NavbarMain() {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets" className="font-signin">Sign In</Nav.Link>
-                        <Nav.Link href="#memes"> Sign Up </Nav.Link>
+                        <Nav.Link className="px-4 ms-2" href="#memes" style={{
+                            color: '#ffffff',
+                            background: '#9A307C',
+                            borderRadius: '100px',
+                        }}> Sign Up </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
